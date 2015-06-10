@@ -1,12 +1,5 @@
 # Inherit common CM stuff
-$(call inherit-product, vendor/tesla/config/common.mk)
-
-# Include CM audio files
-include vendor/tesla/config/cm_audio.mk
-
-# Required CM packages
-PRODUCT_PACKAGES += \
-    LatinIME
+$(call inherit-product, vendor/tesla/config/common_full.mk)
 
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
