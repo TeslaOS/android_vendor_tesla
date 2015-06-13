@@ -104,6 +104,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/tesla/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
+# Tesla ClockWidget
+PRODUCT_COPY_FILES +=  \
+    vendor/tesla/proprietary/TeslaClockWidget.apk:system/app/TeslaClockWidget/TeslaClockWidget.apk \
+
 # T-Mobile theme engine
 include vendor/tesla/config/themes_common.mk
 
