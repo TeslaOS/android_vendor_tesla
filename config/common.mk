@@ -304,6 +304,16 @@ ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),build/target/product/security/testkey)
 endif
 endif
 
+# TeslaOS Statistics
+PRODUCT_COPY_FILES +=  \
+    vendor/tesla/proprietary/RomStats.apk:system/app/RomStats/RomStats.apk \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+   ro.romstats.url=http://teslaos.github.io/stats \
+   ro.romstats.name=TeslaOS \
+   ro.romstats.version=-$(TESLA_VERSION) \
+   ro.romstats.tframe=7
+
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
