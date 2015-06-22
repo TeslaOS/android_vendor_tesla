@@ -310,8 +310,8 @@ PRODUCT_COPY_FILES +=  \
 
 PRODUCT_PROPERTY_OVERRIDES += \
    ro.romstats.url=http://teslaos-stats.theroyalstudent.com \
-   ro.romstats.name=TeslaOS \
-   ro.romstats.version=-$(TESLA_VERSION) \
+   ro.romstats.name=$(TESLA_BUILDTYPE) \
+   ro.romstats.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
    ro.romstats.tframe=7
 
 # by default, do not update the recovery with system updates
