@@ -188,10 +188,13 @@ PRODUCT_PACKAGES += \
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
-    libstagefright_soft_ffmpegadec \
-    libstagefright_soft_ffmpegvdec \
-    libFFmpegExtractor \
+    libffmpeg_extractor \
+    libffmpeg_omx \
     media_codecs_ffmpeg.xml
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.sf.omx-plugin=libffmpeg_omx.so \
+    media.sf.extractor-plugin=libffmpeg_extractor.so
 
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
@@ -324,7 +327,7 @@ ifndef CM_PLATFORM_SDK_VERSION
   # the SDK are released.  It should only be incremented when the APIs for
   # the new release are frozen (so that developers don't write apps against
   # intermediate builds).
-  CM_PLATFORM_SDK_VERSION := 1
+  CM_PLATFORM_SDK_VERSION := 2
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
