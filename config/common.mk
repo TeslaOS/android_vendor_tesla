@@ -282,7 +282,7 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.tesla.version=$(TESLA_VERSION) \
   ro.tesla.releasetype=$(TESLA_BUILDTYPE) \
-  ro.teslaversion=$(TESLA_VERSION)
+  ro.teslaversion=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)
 
 -include vendor/cm-priv/keys/keys.mk
 
@@ -309,13 +309,7 @@ endif
 
 # TeslaOS Statistics
 PRODUCT_COPY_FILES +=  \
-    vendor/tesla/proprietary/RomStats.apk:system/app/RomStats/RomStats.apk \
-
-PRODUCT_PROPERTY_OVERRIDES += \
-   ro.romstats.url=http://teslaos-stats.theroyalstudent.com \
-   ro.romstats.name=$(TESLA_BUILDTYPE) \
-   ro.romstats.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-   ro.romstats.tframe=7
+    vendor/tesla/proprietary/TeslaStats.apk:system/app/TeslaStats/TeslaStats.apk \
 
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
