@@ -224,7 +224,7 @@ ifndef TESLA_BUILDTYPE
 endif
 
 # Filter out random types, so it'll reset to UNOFFICIAL
-ifeq ($(filter RELEASE NIGHTLY SNAPSHOT EXPERIMENTAL,$(TESLA_BUILDTYPE)),)
+ifeq ($(filter RELEASE OFFICIAL WEEKLY SNAPSHOT EXPERIMENTAL,$(TESLA_BUILDTYPE)),)
     TESLA_BUILDTYPE :=
 endif
 
