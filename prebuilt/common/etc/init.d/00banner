@@ -3,11 +3,10 @@
 # Print startup info
 #
 L="log -p i -t tesla"
-
-$L "  _____   ___     _____   _          ___      ";
-$L " |_   _| |  _|   / / \_\ | |        / _ \     ";
-$L "   | |   | |_    \ \     | |       / /_\ \    ";
-$L "   | |   |  _| __ \ \    | |      / _____ \   ";
-$L "   | |   | |_  \ \_\ \   | |__   / /     \ \  "; 
-$L "   |_|   |___|  \____/   |____\ /_/       \_\ ";
-$L "Welcome to Android `getprop ro.build.version.release` / TeslaOS-`getprop ro.tesla.version`";  
+$L " _____                _              ___    ____   ";
+$L "|_   _|   ___   ___  | |   __ _     / _ \  / ___|  ";
+$L "  | |    / _ \ / __| | |  / _` |   | | | | \___ \  ";
+$L "  | |   |  __/ \__ \ | | | (_| |   | |_| |  ___) | ";
+$L "  |_|    \___| |___/ |_|  \__,_|    \___/  |____/  ";
+$L "                                                   ";
+$L "Welcome to Android `getprop ro.build.version.release` / TeslaOS-`getprop ro.tesla.version`";
