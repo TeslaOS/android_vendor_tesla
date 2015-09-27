@@ -136,7 +136,8 @@ PRODUCT_PACKAGES += \
     Eleven \
     LockClock \
     CMHome \
-    TeslaSetupWizard
+    TeslaSetupWizard \
+    CMSettingsProvider
 
 # CM Platform Library
 PRODUCT_PACKAGES += \
