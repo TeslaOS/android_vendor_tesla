@@ -131,13 +131,17 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     Trebuchet \
     AudioFX \
-    TeslaWallpapers \
     CMFileManager \
     Eleven \
     LockClock \
     CMHome \
-    TeslaSetupWizard \
     CMSettingsProvider
+
+# Custom TeslaOS packages
+PRODUCT_PACKAGES += \
+    TeslaWallpapers \
+		TeslaSetupWizard \
+		TeslaOSUpdateCenter
 
 # CM Platform Library
 PRODUCT_PACKAGES += \
