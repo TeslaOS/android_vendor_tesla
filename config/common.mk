@@ -140,8 +140,8 @@ PRODUCT_PACKAGES += \
 # Custom TeslaOS packages
 PRODUCT_PACKAGES += \
     TeslaWallpapers \
-		TeslaSetupWizard \
-		TeslaOSUpdateCenter
+    TeslaSetupWizard \
+    TeslaOSUpdateCenter
 
 # CM Platform Library
 PRODUCT_PACKAGES += \
@@ -289,7 +289,8 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.tesla.version=$(TESLA_VERSION) \
   ro.tesla.releasetype=$(TESLA_BUILDTYPE) \
-  ro.teslaversion=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)
+  ro.teslaversion=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
+  tesla.ota.version=$(shell date +%Y%m%d)
 
 -include vendor/cm-priv/keys/keys.mk
 
