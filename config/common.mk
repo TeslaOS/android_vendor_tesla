@@ -98,6 +98,10 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES += \
     vendor/tesla/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
 
+# Copy over added mimetype supported in libcore.net.MimeUtils
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
+
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
@@ -333,7 +337,7 @@ ifndef CM_PLATFORM_SDK_VERSION
   # the SDK are released.  It should only be incremented when the APIs for
   # the new release are frozen (so that developers don't write apps against
   # intermediate builds).
-  CM_PLATFORM_SDK_VERSION := 3
+  CM_PLATFORM_SDK_VERSION := 4
 endif
 
 ifndef CM_PLATFORM_REV
