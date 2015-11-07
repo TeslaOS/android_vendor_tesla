@@ -89,11 +89,6 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/tesla/prebuilt/common/etc/init.local.rc:root/init.cm.rc
 
-# Bring in camera effects
-PRODUCT_COPY_FILES +=  \
-    vendor/tesla/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/tesla/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
-
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
     vendor/tesla/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
@@ -114,7 +109,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES +=  \
     vendor/tesla/proprietary/TeslaClockWidget.apk:system/app/TeslaClockWidget/TeslaClockWidget.apk \
 
-# T-Mobile theme engine
+# Theme engine
 include vendor/tesla/config/themes_common.mk
 
 # Required CM packages
@@ -125,8 +120,6 @@ PRODUCT_PACKAGES += \
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
-    VoicePlus \
-    Basic \
     libemoji \
     Terminal
 
@@ -138,8 +131,8 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     Eleven \
     LockClock \
-    CMHome \
-    CMSettingsProvider
+    CMSettingsProvider \
+    ExactCalculator
 
 # Custom TeslaOS packages
 PRODUCT_PACKAGES += \
@@ -290,11 +283,7 @@ ifeq ($(TESLA_BUILDTYPE), RELEASE)
         endif
     endif
 else
-    ifeq ($(PRODUCT_VERSION_MINOR),0)
-        TESLA_VERSION := $(PRODUCT_VERSION_MAJOR)-$(shell date -u +%Y%m%d)-$(TESLA_BUILDTYPE)$(TESLA_EXTRAVERSION)-$(TESLA_BUILD)
-    else
-        TESLA_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(TESLA_BUILDTYPE)$(TESLA_EXTRAVERSION)-$(TESLA_BUILD)
-    endif
+    TESLA_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(TESLA_BUILDTYPE)$(TESLA_EXTRAVERSION)-$(TESLA_BUILD)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
