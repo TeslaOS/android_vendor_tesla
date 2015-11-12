@@ -162,19 +162,26 @@ PRODUCT_PACKAGES += \
     htop \
     powertop \
     lsof \
-    mount.exfat \
-    fsck.exfat \
-    mkfs.exfat \
     mkfs.f2fs \
     fsck.f2fs \
     fibmap.f2fs \
-    ntfsfix \
-    ntfs-3g \
+    mkfs.ntfs \
+    fsck.ntfs \
+    mount.ntfs \
     gdbserver \
     micro_bench \
     oprofiled \
     sqlite3 \
     strace
+
+WITH_EXFAT ?= true
+ifeq ($(WITH_EXFAT),true)
+TARGET_USES_EXFAT := true
+PRODUCT_PACKAGES += \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat
+endif
 
 # Openssh
 PRODUCT_PACKAGES += \
@@ -199,13 +206,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so
-
-# TCM (TCP Connection Management)
-PRODUCT_PACKAGES += \
-    tcmiface
-
-PRODUCT_BOOT_JARS += \
-    tcmiface
 
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
