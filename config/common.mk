@@ -109,6 +109,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES +=  \
     vendor/tesla/proprietary/TeslaClockWidget.apk:system/app/TeslaClockWidget/TeslaClockWidget.apk \
 
+# Live lockscreen
+PRODUCT_COPY_FILES += \
+    vendor/tesla/config/permissions/org.cyanogenmod.livelockscreen.xml:system/etc/permissions/org.cyanogenmod.livelockscreen.xml
+
 # Theme engine
 include vendor/tesla/config/themes_common.mk
 
