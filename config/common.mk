@@ -169,9 +169,6 @@ PRODUCT_PACKAGES += \
     htop \
     powertop \
     lsof \
-    mount.exfat \
-    fsck.exfat \
-    mkfs.exfat \
     mkfs.f2fs \
     fsck.f2fs \
     fibmap.f2fs \
@@ -182,6 +179,15 @@ PRODUCT_PACKAGES += \
     oprofiled \
     sqlite3 \
     strace
+
+WITH_EXFAT ?= true
+ifeq ($(WITH_EXFAT),true)
+TARGET_USES_EXFAT := true
+PRODUCT_PACKAGES += \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat
+endif
 
 # Openssh
 PRODUCT_PACKAGES += \
@@ -222,7 +228,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/tesla/overlay/common
 
 PRODUCT_VERSION_MAJOR = 2
 PRODUCT_VERSION_MINOR = 2
-PRODUCT_VERSION_MAINTENANCE = RC3
+PRODUCT_VERSION_MAINTENANCE = MAINLINE
 
 # Set TESLA_BUILDTYPE from the env RELEASE_TYPE, for jenkins compat
 
@@ -314,7 +320,7 @@ ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),build/target/product/security/testkey)
     else
       TARGET_VENDOR_RELEASE_BUILD_ID := $(TARGET_VENDOR_RELEASE_BUILD_ID)
     endif
-    TESLA_DISPLAY_VERSION=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(TARGET_VENDOR_RELEASE_BUILD_ID)
+    TESLA_DISPLAY_VERSION=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(TARGET_VENDOR_RELEASE_BUILD_ID)
   endif
 endif
 endif
