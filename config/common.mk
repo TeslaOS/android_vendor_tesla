@@ -139,7 +139,9 @@ PRODUCT_PACKAGES += \
     Eleven \
     LockClock \
     CMSettingsProvider \
-    ExactCalculator
+    ExactCalculator \
+    LiveLockScreenService \
+    WeatherProvider
 
 # Custom TeslaOS packages
 PRODUCT_PACKAGES += \
