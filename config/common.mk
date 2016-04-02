@@ -313,7 +313,7 @@ endif
 
 # TeslaOS Statistics
 PRODUCT_COPY_FILES +=  \
-    vendor/tesla/proprietary/TeslaStats.apk:system/app/TeslaStats/TeslaStats.apk \
+    vendor/tesla/proprietary/TeslaStats.apk:system/priv-app/TeslaStats/TeslaStats.apk \
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.tesla.display.version=$(TESLA_DISPLAY_VERSION)
