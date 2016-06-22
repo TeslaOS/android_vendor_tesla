@@ -1,6 +1,8 @@
 # Inherit common CM stuff
 $(call inherit-product, vendor/tesla/config/common.mk)
 
+PRODUCT_SIZE := full
+
 # Include CM audio files
 include vendor/tesla/config/cm_audio.mk
 

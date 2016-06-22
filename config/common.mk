@@ -140,7 +140,8 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     LiveLockScreenService \
     WeatherProvider \
-    DataUsageProvider
+    DataUsageProvider \
+    WallpaperPicker
 
 # Custom TeslaOS packages
 PRODUCT_PACKAGES += \
