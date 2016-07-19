@@ -70,7 +70,7 @@ PRODUCT_COPY_FILES += \
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/cm/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+    vendor/tesla/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
@@ -220,8 +220,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 DEVICE_PACKAGE_OVERLAYS += vendor/tesla/overlay/common
 
-PRODUCT_VERSION_MAJOR = 3
-PRODUCT_VERSION_MINOR = 9
+PRODUCT_VERSION_MAJOR = 4
+PRODUCT_VERSION_MINOR = 0
 PRODUCT_VERSION_MAINTENANCE = RC2
 
 # Set TESLA_BUILDTYPE from the env RELEASE_TYPE, for jenkins compat
