@@ -117,7 +117,7 @@ PRODUCT_COPY_FILES +=  \
     vendor/tesla/proprietary/TeslaClockWidget.apk:system/app/TeslaClockWidget/TeslaClockWidget.apk \
 
 # Include CM audio files
-include vendor/cm/config/cm_audio.mk
+include vendor/tesla/config/cm_audio.mk
 
 # Theme engine
 include vendor/tesla/config/themes_common.mk
